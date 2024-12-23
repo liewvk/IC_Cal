@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "IC_Cal_backend": {
+      "candid": "src/IC_Cal_backend/IC_Cal_backend.did",
+      "package": "IC_Cal_backend",
+      "type": "rust"
+    },
+    "IC_Cal_frontend": {
+      "dependencies": [
+        "IC_Cal_backend"
+      ],
+      "source": [
+        "src/IC_Cal_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "IC_Cal_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
