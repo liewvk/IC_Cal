@@ -1,3 +1,6 @@
 service : {
-    "greet": (text) -> (text) query;
-}
+  add: (nat, nat) -> (nat);
+  subtract: (nat, nat) -> (int);
+  multiply: (nat, nat) -> (nat);
+  divide: (nat, nat) -> (opt nat);
+};

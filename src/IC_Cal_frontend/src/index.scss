@@ -1,37 +1,111 @@
+// index.scss - Define global styles only once
 body {
-  font-family: sans-serif;
-  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-img {
-  max-width: 50vw;
-  max-height: 25vw;
-  display: block;
-  margin: auto;
+// Utility classes
+.text-center {
+  text-align: center;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Header styles
+header {
+  background: #0077cc;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+}
+
+// Button styles
+button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+
+  &:hover {
+    background: #005fa3;
+  }
+
+  &:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+// Card styles
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+// Form styles
 form {
   display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  flex-flow: row wrap;
-  max-width: 40vw;
-  margin: auto;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 10px;
+
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+      border-color: #0077cc;
+    }
+  }
 }
 
-button[type="submit"] {
-  padding: 5px 20px;
-  margin: 10px auto;
-  float: right;
-}
+// Footer styles
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+  font-size: 0.9rem;
 
-#greeting {
-  margin: 10px auto;
-  padding: 10px 60px;
-  border: 1px solid #222;
-}
+  a {
+    color: #0077cc;
+    text-decoration: none;
 
-#greeting:empty {
-  display: none;
-}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
