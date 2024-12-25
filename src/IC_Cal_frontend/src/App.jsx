@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./index.scss";
 
 const App = () => {
   const [result, setResult] = useState(null);
@@ -9,7 +9,6 @@ const App = () => {
 
   const handleCalculate = async (operation) => {
     setError(null);
-
     try {
       const num1 = parseFloat(input1);
       const num2 = parseFloat(input2);
@@ -19,24 +18,23 @@ const App = () => {
         return;
       }
 
-      // Call the backend canister methods (mocked here for illustration)
       let res;
       switch (operation) {
         case "add":
-          res = num1 + num2; // Replace with backend call
+          res = num1 + num2;
           break;
         case "subtract":
-          res = num1 - num2; // Replace with backend call
+          res = num1 - num2;
           break;
         case "multiply":
-          res = num1 * num2; // Replace with backend call
+          res = num1 * num2;
           break;
         case "divide":
           if (num2 === 0) {
             setError("Cannot divide by zero.");
             return;
           }
-          res = num1 / num2; // Replace with backend call
+          res = num1 / num2;
           break;
         default:
           setError("Invalid operation.");
@@ -76,14 +74,30 @@ const App = () => {
               />
             </form>
             <div className="buttons">
-              <button onClick={() => handleCalculate("add")}>Add</button>
-              <button onClick={() => handleCalculate("subtract")}>
+              <button
+                className="add"
+                onClick={() => handleCalculate("add")}
+              >
+                Add
+              </button>
+              <button
+                className="subtract"
+                onClick={() => handleCalculate("subtract")}
+              >
                 Subtract
               </button>
-              <button onClick={() => handleCalculate("multiply")}>
+              <button
+                className="multiply"
+                onClick={() => handleCalculate("multiply")}
+              >
                 Multiply
               </button>
-              <button onClick={() => handleCalculate("divide")}>Divide</button>
+              <button
+                className="divide"
+                onClick={() => handleCalculate("divide")}
+              >
+                Divide
+              </button>
             </div>
             {error && <p className="error">{error}</p>}
             {result !== null && <p className="result">Result: {result}</p>}
@@ -99,4 +113,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;
